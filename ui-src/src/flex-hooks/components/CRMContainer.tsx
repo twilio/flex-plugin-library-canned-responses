@@ -1,10 +1,9 @@
 import * as Flex from '@twilio/flex-ui';
 
 import CannedResponsesCRM from '../../custom-components/CannedResponsesCRM';
-import { FlexComponent } from '../../../../types/feature-loader';
 import { getUILocation } from '../../config';
 
-export const componentName = FlexComponent.CRMContainer;
+export const componentName = 'CRMContainer';
 export const componentHook = function addCannedResponsesCRMContainer(flex: typeof Flex, _manager: Flex.Manager) {
   const options: Flex.ContentFragmentProps = {
     if: (props: any) => {
