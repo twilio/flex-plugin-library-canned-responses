@@ -47,6 +47,7 @@ exports.handler = async function (context, event, callback) {
   const sourceMapUri = `${pluginBaseUrl}/bundle.js.map`;
   const replacementMap = {
     '<FLEX_APP_SERVERLESS_FUNCTONS_DOMAIN>': 'https://' + context.DOMAIN_NAME,
+    '<COMPONENT_UI_LOCATION>': context.UI_LOCATION
   };
   const serviceSid = event.serviceSid;
   const serverlessClient = new TwilioServerlessApiClient({

@@ -1,10 +1,10 @@
 import * as Flex from '@twilio/flex-ui';
 
 import CannedResponsesCRM from '../../custom-components/CannedResponsesCRM';
-import { getUILocation } from '../../config';
 
 export const componentName = 'CRMContainer';
-export const componentHook = function addCannedResponsesCRMContainer(flex: typeof Flex, _manager: Flex.Manager) {
+export default function addCannedResponsesCRMContainer(flex: typeof Flex, _manager: Flex.Manager) {
+  const UILocation = process.env.COMPONENT_UI_LOCATION || '<COMPONENT_UI_LOCATION>';
   const options: Flex.ContentFragmentProps = {
     if: (props: any) => {
       // In the TaskCanvas, we have access to the task directly.
@@ -21,7 +21,7 @@ export const componentHook = function addCannedResponsesCRMContainer(flex: typeo
     },
     sortOrder: -1,
   };
-  if (getUILocation() === 'CRM') {
+  if (UILocation === 'CRM') {
     flex.CRMContainer.Content.add(<CannedResponsesCRM key="canned-responses-crm-container" />, options);
   }
 };

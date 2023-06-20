@@ -1,17 +1,17 @@
 import * as Flex from '@twilio/flex-ui';
 
 import CannedResponsesDropdown from '../../custom-components/CannedResponsesDropdown';
-import { getUILocation } from '../../config';
 
 export const componentName = 'CRMContainer';
-export const componentHook = function addCannedResponsesDropdownToMessageInputActions(
+export default function addCannedResponsesDropdownToMessageInputActions(
   flex: typeof Flex,
   _manager: Flex.Manager,
 ) {
+  const UILocation = process.env.COMPONENT_UI_LOCATION || '<COMPONENT_UI_LOCATION>';
   const options: Flex.ContentFragmentProps = {
     sortOrder: 4,
   };
-  if (getUILocation() === 'MessageInputActions') {
+  if (UILocation === 'MessageInputActions') {
     flex.MessageInputActions.Content.add(<CannedResponsesDropdown key="canned-responses-dropdown-button" />, options);
   }
 };

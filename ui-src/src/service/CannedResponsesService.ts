@@ -21,7 +21,7 @@ class CannedResponsesService extends ApiService {
       };
 
       this.fetchJsonWithReject<CannedResponsesReponse>(
-        `${this.serverlessDomain}/features/canned-responses/flex/chat-responses`,
+        `${this.serverlessDomain}/canned-responses/chat-responses`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
