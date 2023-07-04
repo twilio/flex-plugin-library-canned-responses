@@ -11,6 +11,7 @@ import { Button } from '@twilio-paste/button';
 import { CannedResponse, CannedResponseCategories, ResponseCategory } from '../../types/CannedResponses';
 import CannedResponsesService from '../../service/CannedResponsesService';
 import { StringTemplates } from '../../flex-hooks/strings';
+import Analytics, {Event} from '../../utils/Analytics';
 
 interface CannedResponsesDropdownProps {
   task: ITask;
@@ -35,6 +36,11 @@ const CannedResponsesDropdown: React.FunctionComponent<CannedResponsesDropdownPr
       currentInput += ' ';
     }
     currentInput += text;
+
+    Analytics.track(Event.CANNED_RESPONSES_SELECTED,{
+      conversationSid
+    });
+
     Actions.invokeAction('SetInputText', {
       body: currentInput,
       conversationSid,
