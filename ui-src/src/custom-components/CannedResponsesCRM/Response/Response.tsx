@@ -7,6 +7,7 @@ import { SendIcon } from '@twilio-paste/icons/esm/SendIcon';
 import { Tr, Td } from '@twilio-paste/table';
 import { Flex } from '@twilio-paste/flex';
 import { Tooltip } from '@twilio-paste/tooltip';
+import Analytics, {Event} from '../../../utils/Analytics';
 
 interface ResponseProps {
   label: string;
@@ -24,6 +25,11 @@ const Response: React.FunctionComponent<ResponseProps> = ({ text, task }) => {
       body: text,
       conversationSid,
     });
+
+    Analytics.track(Event.CANNED_RESPONSES_SENT,{
+      conversationSid
+    });
+
     Actions.invokeAction('SetInputText', {
       body: inputState,
       conversationSid,
@@ -39,6 +45,11 @@ const Response: React.FunctionComponent<ResponseProps> = ({ text, task }) => {
       currentInput += ' ';
     }
     currentInput += text;
+
+    Analytics.track(Event.CANNED_RESPONSES_SELECTED,{
+      conversationSid
+    });
+
     Actions.invokeAction('SetInputText', {
       body: currentInput,
       conversationSid,
