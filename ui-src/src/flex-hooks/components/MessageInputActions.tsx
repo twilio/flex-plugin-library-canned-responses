@@ -12,7 +12,7 @@ export default function addCannedResponsesDropdownToMessageInputActions(
     sortOrder: 4,
   };
   console.log(UILocation)
-  if (UILocation === '<COMPONENT_UI_LOCATION>') {
+  if (UILocation === 'MessageInputActions') {
     flex.MessageInputActions.Content.add(<CannedResponsesDropdown key="canned-responses-dropdown-button" />, options);
   }
 };
