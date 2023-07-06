@@ -1,7 +1,7 @@
 {
   "name": "plibc-canned-responses",
   "id": "plibc-canned-responses",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "prebuild": "rimraf build && npm run bootstrap",
