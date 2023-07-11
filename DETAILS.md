@@ -11,5 +11,5 @@ Plugin is ready to use once it is installed and canned responses are updated (se
 - Click on service unique name that starts with "plibc-canned-responses"
 - In the assets panel on the left, you will find a *responses.json*. This file lists default canned responses. 
 - You can modify this file with canned responses that suit your business case. After modification, click *Save* and then *Deploy All*.
-![Canned response](screenshots/CannedResponse.png)
+![Canned response](https://raw.githubusercontent.com/twilio/flex-plugin-library-canned-responses/main/screenshots/CannedResponse.png)
 - After modifying the canned responses, agents will need to refresh their browser to see the changed canned responses.
