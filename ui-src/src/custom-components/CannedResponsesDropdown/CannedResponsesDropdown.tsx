@@ -11,7 +11,7 @@ import { Button } from '@twilio-paste/button';
 import { CannedResponse, CannedResponseCategories, ResponseCategory } from '../../types/CannedResponses';
 import CannedResponsesService from '../../service/CannedResponsesService';
 import { StringTemplates } from '../../flex-hooks/strings';
-import Analytics, {Event} from '../../utils/Analytics';
+import { Analytics, Event} from '../../utils/Analytics';
 
 interface CannedResponsesDropdownProps {
   task: ITask;
